@@ -1,6 +1,8 @@
 import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import {
     Form,
     FormControl,
@@ -18,28 +20,32 @@ import {
 import { useCreateBookMutation } from "@/redux/api/baseapi"
 
 
+
 export default function AddBook() {
 
-    const [createBook, { data, isLoading, isError }] = useCreateBookMutation()
+    const [createBook, { data, isError }] = useCreateBookMutation()
     const form = useForm({
         defaultValues: {
             title: "",
             description: "",
             author: "",
             isbn: "",
-            genre: "SCIENCE", 
+            genre: "SCIENCE",
             copies: 1,
             available: true
         },
     })
 
+
+
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         console.log("Submitted Book:", data)
         const res = await createBook(data).unwrap()
-        console.log("inside submit", res);
+        toast.success(res.message || "Book created successfully")
         console.log(isError);
 
     }
+
 
     return (
         <div className="max-w-3xl mx-auto p-6 space-y-6">
@@ -169,6 +175,7 @@ export default function AddBook() {
                     <Button type="submit">Submit Book</Button>
                 </form>
             </Form>
+            <ToastContainer />
         </div>
     )
 }
