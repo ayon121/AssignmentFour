@@ -10,6 +10,9 @@ export const baseApi = createApi({
             query: () => "/books",
             providesTags: ["Books"],
         }),
+        getBookById: builder.query({
+            query: (id: string) => `/books/${id}`
+        }),
         createBook: builder.mutation({
             query: (bookdata) => ({
                 url: "/books",
