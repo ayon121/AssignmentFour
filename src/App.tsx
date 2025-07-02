@@ -3,7 +3,6 @@ import { Link, Outlet } from 'react-router'
 import './App.css'
 import { Button } from './components/ui/button'
 import { ModeToggle } from './components/mode-toggle'
-import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
@@ -21,13 +20,7 @@ function App() {
           <Button className='px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm'><Link to="/books">Book</Link></Button>
           <Button className='px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm'><Link to="/create-book">Add Book</Link></Button>
         </div>
-        <button
-          onClick={() => toast.success("Hello, toast!")}
-          className="p-2 bg-blue-500 text-white"
-        >
-          Show Toast
-        </button>
-        <ToastContainer />
+
 
       </div>
       

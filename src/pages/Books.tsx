@@ -12,12 +12,11 @@ import {
 } from "@/components/ui/table"
 import { useGetBooksQuery } from "@/redux/api/baseapi"
 import type { IBook } from "@/types"
+import { Link } from "react-router"
 
 export default function Books() {
     const { data, isError, isLoading } = useGetBooksQuery(undefined)
     const books: IBook[] = data?.data || []
-
-
     return (
         <div>
             <h1 className="text-4xl font-bold uppercase mb-4">All Books</h1>
@@ -59,11 +58,10 @@ export default function Books() {
                                             <span className="text-red-600 font-medium">No</span>
                                         )}
                                     </TableCell>
-
                                     <TableCell><DropdownMenu>
                                         <DropdownMenuTrigger className="bg-black dark:bg-white text-white dark:text-black px-1 rounded py-1  font-medium hover:bg-black/65 dark:hover:bg-white/65">Options</DropdownMenuTrigger>
                                         <DropdownMenuContent>
-                                            <DropdownMenuItem>View</DropdownMenuItem>
+                                            <DropdownMenuItem><Link to={`/books/${book?._id}`}>Views</Link></DropdownMenuItem>
                                             <EditBookModel
                                                 book={book}
                                                 trigger={<DropdownMenuItem>Edit</DropdownMenuItem>}
