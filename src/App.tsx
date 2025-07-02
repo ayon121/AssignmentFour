@@ -17,6 +17,7 @@ function App() {
         <div className='flex flex-row gap-3 items-center'>
           <Button className='px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm'><Link to="/">Home</Link></Button>
           <Button className='px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm'><Link to="/books">Book</Link></Button>
+          <Button className='px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm'><Link to="/create-book">Add Book</Link></Button>
         </div>
       </div>
       <Outlet></Outlet>

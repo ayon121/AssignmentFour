@@ -1,6 +1,3 @@
-"use client"
-
-
 import EditBookModel from "@/components/module/EditBookModel"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import {
@@ -67,7 +64,10 @@ export default function Books() {
                                         <DropdownMenuTrigger className="bg-black dark:bg-white text-white dark:text-black px-1 rounded py-1  font-medium hover:bg-black/65 dark:hover:bg-white/65">Options</DropdownMenuTrigger>
                                         <DropdownMenuContent>
                                             <DropdownMenuItem>View</DropdownMenuItem>
-                                            <DropdownMenuItem>Edit</DropdownMenuItem>
+                                            <EditBookModel
+                                                book={book}
+                                                trigger={<DropdownMenuItem>Edit</DropdownMenuItem>}
+                                            />
                                             <DropdownMenuItem>Borrow</DropdownMenuItem>
                                             <DropdownMenuItem>Delete</DropdownMenuItem>
                                         </DropdownMenuContent>
