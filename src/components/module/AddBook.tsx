@@ -23,7 +23,7 @@ import { useCreateBookMutation } from "@/redux/api/baseapi"
 
 export default function AddBook() {
 
-    const [createBook, { data, isError }] = useCreateBookMutation()
+    const [createBook, { isError }] = useCreateBookMutation()
     const form = useForm({
         defaultValues: {
             title: "",

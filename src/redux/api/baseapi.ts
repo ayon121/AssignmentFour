@@ -21,7 +21,7 @@ export const baseApi = createApi({
             }),
         }),
         editBook: builder.mutation({
-            query: ({ id, bookdata }) => ({
+            query: ({ id , bookdata }) => ({
                 url: `/books/${id}`,
                 method: "PATCH",
                 body: bookdata,
@@ -32,4 +32,4 @@ export const baseApi = createApi({
     })
 })
 
-export const { useGetBooksQuery, useEditBookMutation, useCreateBookMutation } = baseApi
+export const { useGetBooksQuery, useEditBookMutation, useCreateBookMutation , useGetBookByIdQuery } = baseApi

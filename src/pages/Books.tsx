@@ -61,13 +61,13 @@ export default function Books() {
                                     <TableCell><DropdownMenu>
                                         <DropdownMenuTrigger className="bg-black dark:bg-white text-white dark:text-black px-1 rounded py-1  font-medium hover:bg-black/65 dark:hover:bg-white/65">Options</DropdownMenuTrigger>
                                         <DropdownMenuContent>
-                                            <DropdownMenuItem><Link to={`/books/${book?._id}`}>Views</Link></DropdownMenuItem>
+                                            <DropdownMenuItem className="font-bold hover:text-lg uppercase"><Link to={`/books/${book?._id}`}>View</Link></DropdownMenuItem>
                                             <EditBookModel
                                                 book={book}
                                                 trigger={<DropdownMenuItem>Edit</DropdownMenuItem>}
                                             />
-                                            <DropdownMenuItem>Borrow</DropdownMenuItem>
-                                            <DropdownMenuItem>Delete</DropdownMenuItem>
+                                            <DropdownMenuItem className="font-bold hover:text-lg uppercase">Borrow</DropdownMenuItem>
+                                            <DropdownMenuItem className="font-bold hover:text-lg uppercase">Delete</DropdownMenuItem>
                                         </DropdownMenuContent>
                                     </DropdownMenu></TableCell>
 
