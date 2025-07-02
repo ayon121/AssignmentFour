@@ -33,7 +33,7 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 
 
-export default function AddBookModel() {
+export default function EditBookModel() {
     const form = useForm();
    
 
@@ -45,7 +45,7 @@ export default function AddBookModel() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline">Add New Book</Button>
+                <Button variant="outline">Edit Book</Button>
             </DialogTrigger>
 
             <DialogContent>

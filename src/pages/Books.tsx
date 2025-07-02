@@ -1,6 +1,7 @@
 "use client"
 
-import AddBookModel from "@/components/module/AddBookModel"
+
+import EditBookModel from "@/components/module/EditBookModel"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import {
     Table,
@@ -25,7 +26,7 @@ export default function Books() {
             <h1 className="text-4xl font-bold uppercase mb-4">All Books</h1>
 
             <div className="my-4">
-                <AddBookModel />
+                Add new Books
             </div>
 
             {isLoading && <p className="text-sm text-muted-foreground">Loading books...</p>}
