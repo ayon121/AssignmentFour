@@ -8,9 +8,6 @@ const BookDetailsPage = () => {
         skip: !id,
     });
 
-
-    console.log(data.data);
-
     if (isLoading) return <p>Loading book details...</p>;
     if (isError) return <p>Failed to load book details.</p>;
     return (

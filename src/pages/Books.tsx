@@ -1,4 +1,4 @@
-import EditBookModel from "@/components/module/EditBookModel"
+
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import {
     Table,
@@ -62,10 +62,8 @@ export default function Books() {
                                         <DropdownMenuTrigger className="bg-black dark:bg-white text-white dark:text-black px-1 rounded py-1  font-medium hover:bg-black/65 dark:hover:bg-white/65">Options</DropdownMenuTrigger>
                                         <DropdownMenuContent>
                                             <DropdownMenuItem className="font-bold hover:text-lg uppercase"><Link to={`/books/${book?._id}`}>View</Link></DropdownMenuItem>
-                                            <EditBookModel
-                                                book={book}
-                                                trigger={<DropdownMenuItem>Edit</DropdownMenuItem>}
-                                            />
+                                            <DropdownMenuItem className="font-bold hover:text-lg uppercase"><Link to={`/edit-book/${book?._id}`}>Edit</Link></DropdownMenuItem>
+                    
                                             <DropdownMenuItem className="font-bold hover:text-lg uppercase">Borrow</DropdownMenuItem>
                                             <DropdownMenuItem className="font-bold hover:text-lg uppercase">Delete</DropdownMenuItem>
                                         </DropdownMenuContent>

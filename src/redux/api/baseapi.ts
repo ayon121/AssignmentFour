@@ -23,7 +23,7 @@ export const baseApi = createApi({
         editBook: builder.mutation({
             query: ({ id , bookdata }) => ({
                 url: `/books/${id}`,
-                method: "PATCH",
+                method: "PUT",
                 body: bookdata,
             }),
             invalidatesTags: ["Books"],
