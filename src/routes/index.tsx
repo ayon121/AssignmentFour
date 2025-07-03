@@ -3,6 +3,7 @@ import AddBookPage from "@/pages/AddBookPage";
 import BookDetailsPage from "@/pages/BookDetailsPage";
 import Books from "@/pages/Books";
 import EditBookPage from "@/pages/EditBookPage";
+import LandingPage from "@/pages/LandingPage";
 import { createBrowserRouter } from "react-router";
 
 const router = createBrowserRouter([
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App/>,
     children : [
+        {
+            path : "/",
+            element : <LandingPage></LandingPage>
+        },
         {
             path : "/books",
             element : <Books></Books>
