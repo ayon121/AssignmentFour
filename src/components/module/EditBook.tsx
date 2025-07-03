@@ -28,7 +28,7 @@ export default function EditBook() {
     const { data } = useGetBookByIdQuery(id!, {
         skip: !id,
     });
-    const [editBook, isError] = useEditBookMutation();
+    const [editBook] = useEditBookMutation();
     const form = useForm({
         defaultValues: {
             title: "",

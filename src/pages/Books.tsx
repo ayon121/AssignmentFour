@@ -10,13 +10,27 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { useGetBooksQuery } from "@/redux/api/baseapi"
+import { useDeleteBookMutation, useGetBooksQuery } from "@/redux/api/baseapi"
 import type { IBook } from "@/types"
 import { Link } from "react-router"
+import { toast , ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Books() {
     const { data, isError, isLoading } = useGetBooksQuery(undefined)
     const books: IBook[] = data?.data || []
+
+    const [deleteBook] = useDeleteBookMutation();
+
+    const handleDelete = async (id: string) => {
+        try {
+            await deleteBook(id).unwrap();
+            toast.success("Book deleted successfully");
+        } catch (err) {
+            console.error(err);
+            toast.error("Failed to delete book");
+        }
+    };
     return (
         <div>
             <h1 className="text-4xl font-bold uppercase mb-4">All Books</h1>
@@ -63,9 +77,9 @@ export default function Books() {
                                         <DropdownMenuContent>
                                             <DropdownMenuItem className="font-bold hover:text-lg uppercase"><Link to={`/books/${book?._id}`}>View</Link></DropdownMenuItem>
                                             <DropdownMenuItem className="font-bold hover:text-lg uppercase"><Link to={`/edit-book/${book?._id}`}>Edit</Link></DropdownMenuItem>
-                    
+
                                             <DropdownMenuItem className="font-bold hover:text-lg uppercase">Borrow</DropdownMenuItem>
-                                            <DropdownMenuItem className="font-bold hover:text-lg uppercase">Delete</DropdownMenuItem>
+                                            <DropdownMenuItem onClick={() => handleDelete(book._id)} className="font-bold hover:text-lg uppercase">Delete</DropdownMenuItem>
                                         </DropdownMenuContent>
                                     </DropdownMenu></TableCell>
 
@@ -87,6 +101,7 @@ export default function Books() {
                             </TableCell>
                         </TableRow>
                     </TableFooter>
+                    <ToastContainer></ToastContainer>
                 </Table>
             )}
         </div>
