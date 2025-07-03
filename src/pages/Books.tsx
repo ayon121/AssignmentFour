@@ -35,9 +35,6 @@ export default function Books() {
         <div>
             <h1 className="text-4xl font-bold uppercase mb-4">All Books</h1>
 
-            <div className="my-4">
-                Add new Books
-            </div>
 
             {isLoading && <p className="text-sm text-muted-foreground">Loading books...</p>}
             {isError && <p className="text-sm text-red-500">Failed to load books.</p>}
@@ -101,9 +98,10 @@ export default function Books() {
                             </TableCell>
                         </TableRow>
                     </TableFooter>
-                    <ToastContainer></ToastContainer>
+                    
                 </Table>
             )}
+            <ToastContainer></ToastContainer>
         </div>
     )
 }

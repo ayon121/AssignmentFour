@@ -28,7 +28,7 @@ export function DropdownMenuComponent() {
             <Button className='px-2 py-1 text-xs sm:px-2 sm:py-1.5 sm:text-sm w-full'><Link to="/create-book">Add Book</Link></Button>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Button className='px-2 py-1 text-xs sm:px-2 sm:py-1.5 sm:text-sm w-full'><Link to="/create-book">Borrow Summary</Link></Button>
+            <Button className='px-2 py-1 text-xs sm:px-2 sm:py-1.5 sm:text-sm w-full'><Link to="/borrow-summary">Borrow Summary</Link></Button>
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

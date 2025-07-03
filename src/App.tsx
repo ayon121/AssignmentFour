@@ -23,7 +23,7 @@ function App() {
           <Button className='px-2 py-1 text-xs sm:px-2 sm:py-1.5 sm:text-sm'><Link to="/">Home</Link></Button>
           <Button className='px-2 py-1 text-xs sm:px-2 sm:py-1.5 sm:text-sm'><Link to="/books">All Books</Link></Button>
           <Button className='px-2 py-1 text-xs sm:px-2 sm:py-1.5 sm:text-sm'><Link to="/create-book">Add Book</Link></Button>
-          <Button className='px-2 py-1 text-xs sm:px-2 sm:py-1.5 sm:text-sm'><Link to="/create-book">Borrow Summary</Link></Button>
+          <Button className='px-2 py-1 text-xs sm:px-2 sm:py-1.5 sm:text-sm'><Link to="/borrow-summary">Borrow Summary</Link></Button>
         </div>
 
 
@@ -34,7 +34,7 @@ function App() {
         <Outlet></Outlet>
       </div>
       {/* footer */}
-      <footer className="max-w-7xl mx-auto border-t-2 border-black dark:border-white mt-10 pt-4 pb-6 px-2 md:px-4 text-center rounded-t-2xl shadow-inner">
+      <footer className="max-w-7xl mx-auto border-2 border-black dark:border-white mt-10 pt-4 pb-6 px-2 md:px-4 text-center rounded-t-2xl shadow-inner">
         <p className="text-lg sm:text-sm font-bold text-muted-foreground">
           © {new Date().getFullYear()} Book Management. All rights reserved.
         </p>
