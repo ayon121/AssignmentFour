@@ -20,7 +20,6 @@ export default function AllBorrowSummaryPage() {
     const { data, isError, isLoading } = useGetBorrowQuery(undefined)
     const borrows: IBorrow[] = data?.data || []
 
-    console.log(borrows);
 
     return (
         <div>
@@ -31,7 +30,7 @@ export default function AllBorrowSummaryPage() {
 
             {!isLoading && !isError && (
                 <Table className="border border-black/15  ">
-                    <TableCaption>A list of all available books.</TableCaption>
+                    <TableCaption>A Summary Of Borrowed Books.</TableCaption>
                     <TableHeader>
                         <TableRow>
                             <TableHead className="w-[200px]">Book Name</TableHead>
@@ -51,14 +50,14 @@ export default function AllBorrowSummaryPage() {
                         ) : (
                             <TableRow>
                                 <TableCell colSpan={6} className="text-center">
-                                    No borrow found.
+                                    No Borrow found.
                                 </TableCell>
                             </TableRow>
                         )}
                     </TableBody>
                     <TableFooter className="text-start">
                         <TableRow>
-                            <TableCell colSpan={2}>Total borrow</TableCell>
+                            <TableCell colSpan={2}>Total Borrow</TableCell>
                             <TableCell colSpan={2} className="text-start font-semibold">
                                 {borrows?.length}
                             </TableCell>
