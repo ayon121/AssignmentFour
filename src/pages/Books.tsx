@@ -12,12 +12,15 @@ import {
 } from "@/components/ui/table"
 import { useDeleteBookMutation, useGetBooksQuery } from "@/redux/api/baseapi"
 import type { IBook } from "@/types"
+
 import { Link } from "react-router"
-import { toast , ToastContainer} from "react-toastify"
+import { toast, ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 
 export default function Books() {
-    const { data, isError, isLoading } = useGetBooksQuery(undefined)
+    const { data, isError, isLoading } = useGetBooksQuery(undefined, {
+        pollingInterval: 2000
+    })
     const books: IBook[] = data?.data || []
 
     const [deleteBook] = useDeleteBookMutation();
@@ -31,6 +34,10 @@ export default function Books() {
             toast.error("Failed to delete book");
         }
     };
+
+
+
+
     return (
         <div>
             <h1 className="text-4xl font-bold uppercase mb-4">All Books</h1>
@@ -74,13 +81,16 @@ export default function Books() {
                                         <DropdownMenuContent>
                                             <DropdownMenuItem className="font-bold hover:text-lg uppercase"><Link to={`/books/${book?._id}`}>View</Link></DropdownMenuItem>
                                             <DropdownMenuItem className="font-bold hover:text-lg uppercase"><Link to={`/edit-book/${book?._id}`}>Edit</Link></DropdownMenuItem>
-
-                                            <DropdownMenuItem className="font-bold hover:text-lg uppercase">Borrow</DropdownMenuItem>
+                                            {
+                                                book.available && <DropdownMenuItem className="font-bold hover:text-lg uppercase"><Link to={`/borrow-book/${book?._id}`}>Borrow</Link></DropdownMenuItem>
+                                            }
                                             <DropdownMenuItem onClick={() => handleDelete(book._id)} className="font-bold hover:text-lg uppercase">Delete</DropdownMenuItem>
                                         </DropdownMenuContent>
-                                    </DropdownMenu></TableCell>
+                                    </DropdownMenu>
+                                    </TableCell>
 
                                 </TableRow>
+
                             ))
                         ) : (
                             <TableRow>
@@ -98,7 +108,7 @@ export default function Books() {
                             </TableCell>
                         </TableRow>
                     </TableFooter>
-                    
+
                 </Table>
             )}
             <ToastContainer></ToastContainer>

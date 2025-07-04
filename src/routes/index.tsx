@@ -3,6 +3,7 @@ import AddBookPage from "@/pages/AddBookPage";
 import AllBorrowSummaryPage from "@/pages/AllBorrowSummaryPage";
 import BookDetailsPage from "@/pages/BookDetailsPage";
 import Books from "@/pages/Books";
+import BorrowBookPage from "@/pages/BorrowBookPage";
 import EditBookPage from "@/pages/EditBookPage";
 import LandingPage from "@/pages/LandingPage";
 import { createBrowserRouter } from "react-router";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         {
             path : "/edit-book/:id",
             element : <EditBookPage></EditBookPage>
+        },
+        {
+            path : "/borrow-book/:id",
+            element : <BorrowBookPage></BorrowBookPage>
         },
         {
             path : "/borrow-summary",
