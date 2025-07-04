@@ -50,7 +50,7 @@ export default function BorrowBookPage() {
             console.log(res);
 
             toast.success("Book borrowed successfully");
-        } catch (error : any ) {
+        } catch (error: any) {
             console.error(error);
             toast.error(error?.data?.message || "Failed to borrow book");
         }
@@ -70,12 +70,32 @@ export default function BorrowBookPage() {
                     <FormField
                         control={form.control}
                         name="quantity"
-                        render={({ field }) => (
+                        rules={{
+                            required: "Quantity is required",
+                            min: {
+                                value: 1,
+                                message: "Minimum quantity is 1",
+                            },
+                            max: {
+                                value: bookData?.data?.copies, 
+                                message: `Cannot borrow more than ${bookData?.data?.copies} copies`,
+                            },
+                        }}
+                        render={({ field, fieldState }) => (
                             <FormItem>
                                 <FormLabel>Quantity</FormLabel>
                                 <FormControl>
-                                    <Input {...field} type="number" min={1} placeholder="1" />
+                                    <Input
+                                        {...field}
+                                        type="number"
+                                        min={1}
+                                        max={bookData?.data?.copies}
+                                        placeholder="1"
+                                    />
                                 </FormControl>
+                                {fieldState.error && (
+                                    <p className="text-sm text-red-500">{fieldState.error.message}</p>
+                                )}
                             </FormItem>
                         )}
                     />
