@@ -1,69 +1,70 @@
-# React + TypeScript + Vite
+<h1 align="center"> Book Management Frontend</h1>
+<hr/>
+<p align="center">
+  A responsive and intuitive frontend application for managing a library of books. Built with <strong>React</strong>, <strong>TypeScript</strong>, <strong>Redux Toolkit</strong>, and <strong>Tailwind CSS</strong>.
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<hr />
 
-Currently, two official plugins are available:
+<h2>Features</h2>
+<ul>
+  <li>List all books with real-time updates</li>
+  <li>View detailed information about a book</li>
+  <li>Add a new book to the library</li>
+  <li>Edit existing book details</li>
+  <li>Borrow books with quantity and due date validation</li>
+  <li>Delete books from the collection</li>
+  <li>Light/Dark mode toggle</li>
+  <li>Responsive and accessible UI</li>
+</ul>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>🛠️ Tech Stack</h2>
+<ul>
+  <li><strong>React</strong> with Vite</li>
+  <li><strong>TypeScript</strong></li>
+  <li><strong>Redux Toolkit Query</strong> – API integration</li>
+  <li><strong>Tailwind CSS</strong> – Styling</li>
+  <li><strong>React Hook Form</strong> – Form handling</li>
+  <li><strong>React Router</strong> – Client-side routing</li>
+  <li><strong>Shadcn</strong> – Component Design</li>
+  <li><strong>React Toastify</strong> – Notifications</li>
+</ul>
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<h2>📦 Installation</h2>
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<pre><code>git clone https://github.com/ayon121/AssignmentFour.git
+cd book-management-frontend
+npm install
+npm run dev
+</code></pre>
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<h2>📁 Folder Structure</h2>
+<pre>
+src/
+├── components/
+├── pages/
+├── redux/
+│   └── api/
+├── routes/
+├── assets/
+└── App.tsx
+</pre>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<h2>🧪 Validation & UX</h2>
+<ul>
+  <li>Form validation using <strong>react-hook-form</strong></li>
+  <li>Real-time feedback with <strong>Toastify</strong></li>
+  <li>Input limitations (e.g. can't borrow more copies than available)</li>
+</ul>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+<h2>🙌 Contributing</h2>
+<p>Feel free to submit issues or pull requests to help improve this project.</p>
+<hr />
+
+<p align="center">
+  Made with ❤️ by <strong>Ayon Saha</strong>
+</p>
