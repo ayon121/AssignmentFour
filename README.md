@@ -5,6 +5,11 @@
 </p>
 
 <hr />
+<h2>Live Links</h2>
+<li><strong>Frontend Link : </strong> https://bookmanagementfrontend-wheat.vercel.app</li>
+<li><strong>Backend Link : </strong> https://bookserver-chi.vercel.app</li>
+<hr />
+
 
 <h2>Features</h2>
 <ul>
