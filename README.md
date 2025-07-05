@@ -18,7 +18,7 @@
   <li>Responsive and accessible UI</li>
 </ul>
 
-<h2>🛠️ Tech Stack</h2>
+<h2>Tech Stack</h2>
 <ul>
   <li><strong>React</strong> with Vite</li>
   <li><strong>TypeScript</strong></li>
@@ -31,7 +31,7 @@
 </ul>
 
 
-<h2>📦 Installation</h2>
+<h2> Installation</h2>
 
 <pre><code>git clone https://github.com/ayon121/AssignmentFour.git
 cd book-management-frontend
@@ -40,7 +40,7 @@ npm run dev
 </code></pre>
 
 
-<h2>📁 Folder Structure</h2>
+<h2> Folder Structure</h2>
 <pre>
 src/
 ├── components/
@@ -52,7 +52,7 @@ src/
 └── App.tsx
 </pre>
 
-<h2>🧪 Validation & UX</h2>
+<h2> Validation & UX</h2>
 <ul>
   <li>Form validation using <strong>react-hook-form</strong></li>
   <li>Real-time feedback with <strong>Toastify</strong></li>
@@ -61,7 +61,7 @@ src/
 
 
 
-<h2>🙌 Contributing</h2>
+<h2> Contributing</h2>
 <p>Feel free to submit issues or pull requests to help improve this project.</p>
 <hr />
 
